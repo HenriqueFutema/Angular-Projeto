@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <div *ngIf="user$ | async as user; else login" class="col-lg-2">
+      <app-menu></app-menu>
+      <h6>{{ user.userName }}</h6>
+      <h6>{{ userName }}</h6>
+    </div>
+    <ng-template #login>
+      <h6>Faça seu login</h6>
+    </ng-template>
+    <div class="content col-lg-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

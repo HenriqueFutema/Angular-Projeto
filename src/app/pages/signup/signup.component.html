@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+
+    <div class="col-lg-4 col-xs-12 card-login text-center p-3">
+      <h3 class="mb-5">SignUp</h3>
+      <form [formGroup]="formSignUp" (submit)="handleSubmit()">
+        <input
+          type="text"
+          class="form-control my-4"
+          placeholder="name"
+          formControlName="name"
+        />
+        <div class="my-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="email"
+            formControlName="email"
+          />
+          <app-msg-error
+            msg="Email Inválido"
+            *ngIf="formSignUp.get('email').errors?.email"
+          ></app-msg-error>
+        </div>
+
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="userName"
+          formControlName="userName"
+        />
+        <input
+          type="password"
+          class="form-control my-4"
+          placeholder="password"
+          formControlName="password"
+        />
+        <p class="text-left">
+          <label class="mx-2"
+            ><input
+              type="radio"
+              name="gender"
+              value="masculino"
+              formControlName="gender"
+              checked
+            />Masculino</label
+          >
+          <label class="mx-2"
+            ><input
+              type="radio"
+              name="gender"
+              value="feminino"
+              formControlName="gender"
+            />Feminino</label
+          >
+        </p>
+        <a [routerLink]="['/user/signin']" class="mt-4 btn btn-link">SignIn</a>
+        <button
+          class="mt-1 btn btn-block btn-signin"
+          type="submit"
+          [disabled]="formSignUp.invalid"
+        >
+          CRIAR CONTA
+        </button>
+      </form>
+    </div>
+
+    <div class="col-4"></div>
+  </div>
+</div>

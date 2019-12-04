@@ -1,0 +1,18 @@
+.card-login {
+  margin-top: 5%;
+  background: #894e99;
+  border-radius: 7px;
+  color: #fff;
+}
+
+.btn-signin {
+  background: #fff;
+  color: #894e99;
+  border: 1px solid #fff;
+}
+
+.btn-signin:hover {
+  color: #fff;
+  background: #894e99;
+  border: 1px solid #fff;
+}
